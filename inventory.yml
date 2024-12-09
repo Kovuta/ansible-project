@@ -1,0 +1,7 @@
+all:
+    hosts:
+        mikrotik_router:
+            ansible_host: 172.31.99.1
+            ansible_user: api_user
+            ansible_password: api_password
+            ansible_port: 8728
