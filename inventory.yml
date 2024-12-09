@@ -5,3 +5,4 @@ all:
             ansible_user: api_user
             ansible_password: api_password
             ansible_port: 8728
+            ansible_connection: local

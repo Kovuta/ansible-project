@@ -1,16 +1,18 @@
 - name: Backup Mikrotik Configuration
   hosts: mikrotik_router
-  gather_facts: yes
+  gather_facts: no
     
   tasks:
+    - name: Gather date and time info
+      setup:
+        filter: ansible_date_time
     - name: Create a backup configuration file on router
       community.routeros.api:
         hostname: "{{ ansible_host }}"
         username: "{{ ansible_user }}"
         password: "{{ ansible_password }}"
-        path: "system/backup/save"
-        params:
-          name: "ansible_backup"
+        path: "system/backup"
+        cmd: "save name=ansible_backup_{{ ansible_date_time.date }}"
       register: backup_result
         
     - name: Show the backup result
