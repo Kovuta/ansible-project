@@ -12,7 +12,7 @@
         username: "{{ ansible_user }}"
         password: "{{ ansible_password }}"
         path: "system/backup"
-        cmd: "save name=ansible_backup_{{ ansible_date_time.date }}"
+        cmd: "save name=auto_backup_{{ ansible_date_time.date }}"
       register: backup_result
         
     - name: Show the backup result
