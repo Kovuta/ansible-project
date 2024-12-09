@@ -3,7 +3,7 @@ name: CI Pipeline for Ansible Backup
 on:
   push:
     branches:
-      - main:
+      - main
   pull_request:
     branches:
       - main
