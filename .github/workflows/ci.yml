@@ -23,7 +23,7 @@ jobs:
 
       - name: Run ansible-lint
         run: |
-          ansible-lint playbook.yml
+          ansible-lint mikrotik_backup.yml
 
       - name: Test Ansible Playbook
         run: |
